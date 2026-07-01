@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>الرزمانة الذهبية</title>
+    <!-- رابط خطوط Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet"/>
+    <style>
+        /* إعادة تعيين أساسية */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #1a0f0a 0%, #2d1a12 50%, #1f110b 100%);
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* خلفية ذهبية متحركة (جزيئات) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.04) 0%, transparent 60%),
+                        radial-gradient(circle at 70% 70%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            animation: shimmer 15s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(2%, 1%) rotate(3deg); }
+        }
+
+        /* البطاقة الرئيسية */
+        .hero-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(30, 18, 12, 0.85);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 48px;
+            padding: 60px 50px;
+            max-width: 780px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.7),
+                        0 0 80px rgba(212, 175, 55, 0.06),
+                        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .hero-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8),
+                        0 0 120px rgba(212, 175, 55, 0.08);
+        }
+
+        /* الزخرفة الذهبية العلوية */
+        .ornament {
+            font-size: 2.2rem;
+            color: #d4af37;
+            letter-spacing: 8px;
+            opacity: 0.6;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        /* البسملة */
+        .bismillah {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #c9a84c;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+            letter-spacing: 2px;
+        }
+
+        /* العنوان الرئيسي */
+        .main-title {
+            font-size: 4.8rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f9e28c 0%, #d4af37 40%, #b8860b 70%, #f9e28c 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: goldShine 6s ease-in-out infinite alternate;
+            line-height: 1.2;
+            margin-bottom: 12px;
+            letter-spacing: 4px;
+        }
+
+        @keyframes goldShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* خط فاصل ذهبي */
+        .divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 16px auto 20px;
+            border-radius: 10px;
+            opacity: 0.5;
+        }
+
+        /* النص الوصفي */
+        .sub-text {
+            font-size: 1.2rem;
+            color: rgba(212, 185, 150, 0.8);
+            line-height: 1.9;
+            margin-bottom: 28px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .sub-text span {
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        /* زر مشاريعنا */
+        .btn-gold {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: #1a0f0a;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
+            letter-spacing: 1px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #e8c94a, #c9960e);
+        }
+
+        .btn-gold:active {
+            transform: scale(0.97);
+        }
+
+        /* تذييل صغير */
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: rgba(212, 185, 150, 0.3);
+            letter-spacing: 3px;
+            font-weight: 300;
+        }
+
+        /* أيقونات زخرفية جانبية (اختيارية) */
+        .icon-deco {
+            display: inline-block;
+            margin: 0 6px;
+            color: rgba(212, 175, 55, 0.2);
+        }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 600px) {
+            .hero-card {
+                padding: 40px 24px;
+                border-radius: 32px;
+            }
+            .main-title {
+                font-size: 3.2rem;
+            }
+            .bismillah {
+                font-size: 1.4rem;
+            }
+            .sub-text {
+                font-size: 1rem;
+            }
+            .btn-gold {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+            .ornament {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-card">
+
+        <!-- زخرفة علوية -->
+        <div class="ornament">✦ ✧ ✦</div>
+
+        <!-- البسملة -->
+        <div class="bismillah">﷽</div>
+
+        <!-- العنوان -->
+        <h1 class="main-title">الرزمانة الذهبية</h1>
+
+        <!-- خط فاصل -->
+        <div class="divider"></div>
+
+        <!-- النص الوصفي -->
+        <p class="sub-text">
+            <span>✦</span> منصة متكاملة للتميز والإبداع <span>✦</span><br />
+            نصنع <span>المستقبل</span> بأيدٍ ذهبية ورؤى ملهمة
+        </p>
+
+        <!-- زر الإجراء -->
+        <a href="#" class="btn-gold">استكشف مشاريعنا</a>
+
+        <!-- تذييل -->
+        <div class="footer-note">
+            <span class="icon-deco">◈</span> بسم الله نبدأ <span class="icon-deco">◈</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
